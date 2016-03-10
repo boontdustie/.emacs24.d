@@ -11,6 +11,9 @@
 (setq gpk-init-dir
       (expand-file-name "init.d" gpk-emacs-config-dir))
 
+(defvar gpk-emacs-temporal-directory (concat user-emacs-directory "tmp/"))
+(unless (file-exists-p gpk-emacs-temporal-directory)
+    (make-directory gpk-emacs-temporal-directory))
 
 ;; General
 (setq help-window-select t) ;; Automatically select help files
@@ -27,7 +30,7 @@
 (load-theme 'manoj-dark)
 
 ;; save/restore opened files and windows config
-(desktop-save-mode 1) ; 0 for o
+;;(desktop-save-mode 1) ; 0 for o
 
 ;; Load all elisp files in ./init.d
 (if (file-exists-p gpk-init-dir)

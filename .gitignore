@@ -2,3 +2,4 @@ elpa
 .emacs.desktop*
 projectile*
 ido.last
+tmp

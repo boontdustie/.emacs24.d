@@ -31,7 +31,6 @@
 (setq org-default-notes-file "~/git/me/todo/todo.org")
 (setq org-directory "~/git/me/todo")
 
-
 ;;;; ORG-MODE: Other customizations
 (setq org-agenda-text-search-extra-files '(agenda-archives))
 (setq org-blank-before-new-entry '((heading . t)

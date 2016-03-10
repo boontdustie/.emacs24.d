@@ -35,5 +35,6 @@
 			  'windresize
 			  'evil-rails
 			  'erc
+			  'elfeed
 			  )
 
