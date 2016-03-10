@@ -1,24 +1,16 @@
 ;; Directories and file names
-(setq abg-emacs-init-file (or load-file-name buffer-file-name))
-(setq abg-emacs-config-dir
-            (file-name-directory abg-emacs-init-file))
-(setq user-emacs-directory abg-emacs-config-dir)
-(setq abg-elisp-dir (expand-file-name "elisp" abg-emacs-config-dir))
-(setq abg-elisp-external-dir
-            (expand-file-name "external" abg-elisp-dir))
-(setq abg-themes-dir
-            (expand-file-name "themes" abg-elisp-dir))
-(setq abg-init-dir
-            (expand-file-name "init.d" abg-emacs-config-dir))
+(setq gpk-emacs-init-file (or load-file-name buffer-file-name))
+(setq gpk-emacs-config-dir
+      (file-name-directory gpk-emacs-init-file))
+(setq user-emacs-directory gpk-emacs-config-dir)
+(setq gpk-elisp-dir (expand-file-name "elisp" gpk-emacs-config-dir))
+(setq gpk-elisp-external-dir
+      (expand-file-name "external" gpk-elisp-dir))
+(setq gpk-themes-dir
+      (expand-file-name "themes" gpk-elisp-dir))
+(setq gpk-init-dir
+      (expand-file-name "init.d" gpk-emacs-config-dir))
 
-;; I hate putting package-specific config in this file, but this line
-;; MUST come before Org is loaded
-(setq org-replace-disputed-keys t)
-
-;; Load all the other
-(if (file-exists-p abg-init-dir)
-    (dolist (file (directory-files abg-init-dir t "\.el$"))
-      (load file)))
 
 ;; General
 (setq help-window-select t) ;; Automatically select help files
@@ -36,3 +28,8 @@
 
 ;; save/restore opened files and windows config
 (desktop-save-mode 1) ; 0 for o
+
+;; Load all elisp files in ./init.d
+(if (file-exists-p gpk-init-dir)
+    (dolist (file (directory-files gpk-init-dir t "\\.el$"))
+      (load file)))

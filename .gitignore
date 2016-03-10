@@ -1,2 +1,4 @@
 elpa
-.emacs.desktop
+.emacs.desktop*
+projectile*
+ido.last
