@@ -31,10 +31,11 @@
 			  'git-gutter
 			  'projectile
 			  'org
+			  'powerline-evil
+			  'airline-themes
 			  'flx-ido
 			  'windresize
 			  'evil-rails
 			  'erc
-			  'elfeed
 			  )
 
