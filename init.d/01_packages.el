@@ -26,16 +26,15 @@
 (package-initialize)
 
 (ensure-package-installed 'evil
-			  'evil-magit
-			  'helm
-			  'git-gutter
-			  'projectile
-			  'org
-			  'powerline-evil
-			  'airline-themes
-			  'flx-ido
-			  'windresize
-			  'evil-rails
-			  'erc
-			  )
-
+        'evil-magit
+        'helm
+        'git-gutter
+        'projectile
+        'org
+        'powerline-evil
+        'airline-themes
+        'flx-ido
+        'windresize
+        'evil-rails
+        'erc
+        )

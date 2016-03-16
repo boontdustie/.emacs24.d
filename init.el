@@ -15,19 +15,11 @@
 (unless (file-exists-p gpk-emacs-temporal-directory)
     (make-directory gpk-emacs-temporal-directory))
 
-;; make backup to a designated dir, mirroring the full path
-(defun my-backup-file-name (fpath)
-    "Return a new file path of a given file path.
-If the new path's directories does not exist, create them."
-    (let* (
-	   (backupRootDir "~/.emacs24.d/tmp/")
-           (backupFilePath (replace-regexp-in-string "//" "/" (concat backupRootDir "~")))
-	 )
-      (make-directory (file-name-directory backupFilePath) (file-name-directory backupFilePath))
-      backupFilePath
-      )
-    )
-(setq make-backup-file-name-function 'my-backup-file-name)
+(setq backup-directory-alist
+      `((".*" . , gpk-emacs-temporal-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,gpk-emacs-temporal-directory t)))
+
 
 ;; General
 (setq help-window-select t) ;; Automatically select help files
@@ -44,6 +36,9 @@ If the new path's directories does not exist, create them."
 (setq custom-file (expand-file-name "emacs-customizations.el" gpk-emacs-config-dir))
 (load custom-file)
 
+;; Load desired theme
+(load-theme 'wombat)
+
 ;; Remove background from themes since I use a transparent background in iTerm
 ;; http://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
 (defun on-after-init ()
@@ -51,5 +46,9 @@ If the new path's directories does not exist, create them."
     (set-face-background 'default "unspecified-bg" (selected-frame))))
 (add-hook 'window-setup-hook 'on-after-init)
 
-;; Load desired theme
-(load-theme 'wombat)
+;; Remove background when this file is loaded.
+(set-face-background 'default "unspecified-bg" (selected-frame))
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default evil-shift-width 2)
