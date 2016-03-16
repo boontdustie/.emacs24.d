@@ -10,31 +10,36 @@
 
   Return a list of installed packages or nil for every skipped package."
     (mapcar
-         (lambda (package)
-                (if (package-installed-p package)
-                           nil
-                                  (if (y-or-n-p (format "Package %s is missing. Install it? " package))
-                                               (package-install package)
-                                                        package)))
-            packages))
+	 (lambda (package)
+		(if (package-installed-p package)
+			   nil
+				  (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+					       (package-install package)
+							package)))
+	    packages))
 
 ;; Make sure to have downloaded archive description.
 (or (file-exists-p package-user-dir)
-        (package-refresh-contents))
+	(package-refresh-contents))
 
 ;; Activate installed packages
 (package-initialize)
 
 (ensure-package-installed 'evil
-        'evil-magit
-        'helm
-        'git-gutter
-        'projectile
-        'org
-        'powerline-evil
-        'airline-themes
-        'flx-ido
-        'windresize
-        'evil-rails
-        'erc
-        )
+	'evil-magit
+	'helm
+	'helm-ag
+	'git-gutter
+	'projectile
+	'org
+	'powerline-evil
+	'airline-themes
+	'flx-ido
+	'windresize
+	'evil-rails
+	'erc
+	'robe
+	'company
+	'popwin
+	'direx
+	)

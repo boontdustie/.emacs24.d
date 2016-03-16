@@ -48,7 +48,3 @@
 
 ;; Remove background when this file is loaded.
 (set-face-background 'default "unspecified-bg" (selected-frame))
-
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
-(setq-default evil-shift-width 2)
