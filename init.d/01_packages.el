@@ -42,4 +42,8 @@
 	'company
 	'popwin
 	'direx
+	'grizzl
+	'ws-butler
+	'color-theme-zenburn
+	'color-theme-wombat
 	)

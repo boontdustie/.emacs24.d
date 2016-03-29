@@ -27,9 +27,9 @@
 (define-key global-map (kbd "C-c c") 'gpk-org-task-capture)
 
 ;;;; ORG-MODE: Setting up where agenda/todo files go
-(setq org-agenda-files '("~/git/me/todo"))
-(setq org-default-notes-file "~/git/me/todo/todo.org")
-(setq org-directory "~/git/me/todo")
+(setq org-agenda-files '("~/git/me/org"))
+(setq org-default-notes-file "~/git/me/org/todo.org")
+(setq org-directory "~/git/me/org")
 
 ;;;; ORG-MODE: Other customizations
 (setq org-agenda-text-search-extra-files '(agenda-archives))
@@ -49,7 +49,6 @@
             (define-key org-agenda-mode-map "p"         'org-agenda-previous-date-line)
             (define-key org-agenda-mode-map "c"         'air-org-agenda-capture)
             (define-key org-agenda-mode-map (kbd "RET") 'org-agenda-switch-to)
-
             ))
 
 ;;;; ORG-MODE: Auto insert when capturing tasks

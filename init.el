@@ -20,7 +20,6 @@
 (setq auto-save-file-name-transforms
       `((".*" ,gpk-emacs-temporal-directory t)))
 
-
 ;; General
 (setq help-window-select t) ;; Automatically select help files
 (setq vc-follow-symlinks nil) ;; Just warn about following git controlled symlinks
@@ -35,8 +34,6 @@
 ;; Set up 'custom' system
 (setq custom-file (expand-file-name "emacs-customizations.el" gpk-emacs-config-dir))
 (load custom-file)
-
-;; Load desired theme
 (load-theme 'wombat)
 
 ;; Remove background from themes since I use a transparent background in iTerm

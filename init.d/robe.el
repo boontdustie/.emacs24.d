@@ -7,3 +7,4 @@
 
 ;; https://github.com/dgutov/robe
 (add-hook 'ruby-mode-hook 'robe-mode)
+(global-set-key (kbd "<f12>") 'robe-jump)
