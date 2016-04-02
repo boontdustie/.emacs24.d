@@ -25,6 +25,7 @@
  ;; If there is more than one, they won't work right.
  '(button ((t (:background "color-232" :foreground "black" :box (:line-width 2 :color "magenta" :style released-button) :underline t :weight bold))))
  '(custom-face-tag ((t (:foreground "brightblack"))))
+ '(file-name-shadow ((t (:inherit shadow))))
  '(magit-diff-added ((t (:background "black" :foreground "#22aa22"))))
  '(magit-diff-added-highlight ((t (:background "black" :foreground "#22aa22"))))
  '(magit-diff-context-highlight ((t (:background "black" :foreground "grey50"))))
@@ -41,5 +42,6 @@
  '(org-level-1 ((t (:foreground "color-146"))))
  '(org-scheduled ((t (:foreground "brightwhite"))))
  '(org-scheduled-today ((t (:foreground "brightcyan"))))
+ '(org-table ((t (:foreground "brightblue"))))
  '(powerline-inactive1 ((t (:background "#d0d0d0" :foreground "black"))))
  '(powerline-inactive2 ((t (:background "#ffffff" :foreground "black")))))

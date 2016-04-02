@@ -27,6 +27,9 @@
 
 (ensure-package-installed 'evil
 	'evil-magit
+	'evil-leader
+	'evil-org
+	'evil-numbers
 	'helm
 	'helm-ag
 	'git-gutter
