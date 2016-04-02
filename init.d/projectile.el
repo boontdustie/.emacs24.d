@@ -4,4 +4,4 @@
 (setq projectile-known-projects-file
             (expand-file-name "projectile-bookmarks.eld" gpk-emacs-temporal-directory))
 
-(setq projectile-completion-system 'grizzl)
+(setq projectile-completion-system 'ido)
