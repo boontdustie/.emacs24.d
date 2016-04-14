@@ -10,6 +10,6 @@
       (company-complete-common)
     (indent-according-to-mode)))
 
-(global-set-key (kbd "\t") 'transpose-windows)
+(global-set-key (kbd "\t") 'complete-or-indent)
 (setq company-idle-delay 0.5)
 

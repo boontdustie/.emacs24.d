@@ -14,8 +14,8 @@
 
 (setq org-capture-templates
       '(("a" "My TODO task format." entry
-	 (file "todo.org")
-	 "* ☛ TODO %?
+         (file "todo.org")
+         "* ☛ TODO %?
       SCHEDULED: %t")))
 
 ;;;; ORG-MODE: Behavior and key-map for capturing tasks
@@ -39,6 +39,7 @@
 (setq org-log-done (quote time))
 (setq org-log-redeadline (quote time))
 (setq org-log-reschedule (quote time))
+(setq org-hide-emphasis-markers t)
 
 ;;;; ORG-MODE: Evil key mapping
 (add-hook 'org-agenda-mode-hook
@@ -56,3 +57,5 @@
           (lambda ()
             (evil-insert-state)))
 (put 'erase-buffer 'disabled nil)
+
+(setq org-agenda-skip-scheduled-if-done t)
