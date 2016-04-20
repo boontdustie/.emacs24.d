@@ -7,6 +7,7 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
+ '(browse-url-browser-function (quote browse-url-default-browser))
  '(custom-enabled-themes (quote (airline-ubaryd)))
  '(custom-safe-themes
    (quote
