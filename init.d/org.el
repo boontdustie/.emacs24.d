@@ -16,13 +16,21 @@
       '(("a" "My TODO task format." entry
          (file "todo.org")
          "* ☛ TODO %?
-      SCHEDULED: %t")))
+      SCHEDULED: %t")
+        ("l" "Links" entry
+          (file "links.org")
+          "* LINK %a")))
 
 ;;;; ORG-MODE: Behavior and key-map for capturing tasks
 (defun gpk-org-task-capture ()
-  "Capture a task with my default template."
+ "Capture a task with my default template."
   (interactive)
     (org-capture nil "a"))
+
+(defun gpk-org-link-capture ()
+ "Capture a link with my default template."
+  (interactive)
+    (org-capture nil "l"))
 
 (define-key global-map (kbd "C-c c") 'gpk-org-task-capture)
 
@@ -40,6 +48,7 @@
 (setq org-log-redeadline (quote time))
 (setq org-log-reschedule (quote time))
 (setq org-hide-emphasis-markers t)
+(setq org-agenda-timegrid-use-ampm t)
 
 ;;;; ORG-MODE: Evil key mapping
 (add-hook 'org-agenda-mode-hook

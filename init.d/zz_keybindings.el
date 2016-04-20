@@ -35,5 +35,6 @@
   ;; add a tag to current entry
   "a" 'elfeed-show-tag
   "s" '(lambda () (interactive) (elfeed-search-toggle-all '*))
+  "o" 'gpk-org-link-capture
   ;; remove a tag from current entry
   "d" 'elfeed-show-untag)
