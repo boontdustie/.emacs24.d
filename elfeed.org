@@ -12,13 +12,13 @@
 **** http://planet.emacsen.org/atom.xml
 **** http://sachachua.com/blog/category/emacs/feed/
 **** http://sachachua.com/blog/category/weekly/feed/
-**** https://www.masteringemacs.org/feed
+**** http://www.masteringemacs.org/feed
 *** Ruby                                                           :ruby:
 **** http://www.sandimetz.com/blog?format=RSS
 **** http://www.mikeperham.com/feed.xml
 **** http://blog.zenspider.com/blog/atom.xml
-**** https://rubytogether.org/news.xml
-**** https://bugs.ruby-lang.org/projects/ruby-trunk/activity.atom
+**** http://rubytogether.org/news.xml
+**** http://bugs.ruby-lang.org/projects/ruby-trunk/activity.atom
 **** http://rubylearning.com/blog/index.xml
 **** http://www.sarahmei.com/blog/feed/
 **** http://tenderlovemaking.com/atom.xml
@@ -27,7 +27,7 @@
 *** Hacker News                                                    :hacker:
 
 ***
-**** https://news.ycombinator.com/rss
+**** http://news.ycombinator.com/rss
 **** http://rss.slashdot.org/Slashdot/slashdotMain
 ** Productivity                                                    :lifehack:
 *** http://feeds.gawker.com/lifehacker/full
@@ -35,15 +35,15 @@
 ** Reddit                                                          :reddit:
 *** http://www.reddit.com/r/emacs/.rss                             :emacs:
 *** http://www.reddit.com/r/seattle/.rss                           :seattle:
-*** https://www.reddit.com/r/orgmode/.rss                           :org:
+*** http://www.reddit.com/r/orgmode/.rss                           :org:
 ** Hollow Earth Radio                                               :her:
 *** Non-profit                                                      :nonprofit:
 **** http://artisttrust.org/index.php/for-artists/rss-opportunities :grants:
 ** Social Justice                                                   :sjw:
-*** https://asksharkmom.wordpress.com/feed/
+*** http://asksharkmom.wordpress.com/feed/
 *** http://feeds2.feedburner.com/racewireblog
 ** Music                                                           :music:
-*** https://weirdcanada.com/feed/atom/
+*** http://weirdcanada.com/feed/atom/
 ** News                                                            :news:
 *** http://www.thenation.com/feed/
 *** http://qz.com/feed/

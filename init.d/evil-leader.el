@@ -5,6 +5,7 @@
  "e" 'find-file
  "b" 'switch-to-buffer
  "k" 'kill-buffer
- "l" 'load-file)
+ "l" 'load-file
+ "c" 'string-rectangle)
 
 (evil-leader/set-leader ",")

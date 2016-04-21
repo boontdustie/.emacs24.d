@@ -52,4 +52,5 @@
         'color-theme-zenburn
         'color-theme-wombat
         'web-mode
+        'twittering-mode
         )
