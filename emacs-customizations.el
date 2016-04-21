@@ -16,6 +16,8 @@
  '(git-gutter:deleted-sign "- ")
  '(git-gutter:modified-sign "• ")
  '(global-company-mode t)
+ '(shr-color-visible-distance-min 10)
+ '(shr-color-visible-luminance-min 100)
  '(whitespace-style
    (quote
     (face tabs trailing space-before-tab indentation empty space-after-tab tab-mark))))
@@ -25,8 +27,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(button ((t (:background "color-232" :foreground "black" :box (:line-width 2 :color "magenta" :style released-button) :underline t :weight bold))))
- '(custom-face-tag ((t (:foreground "brightblack"))))
+ '(custom-face-tag ((t (:foreground "brightblue"))))
+ '(custom-variable-tag ((t (:foreground "brightblue" :weight bold))))
+ '(elfeed-log-warn-level-face ((t (:foreground "brightblue"))))
+ '(elfeed-search-date-face ((t (:foreground "cyan"))))
+ '(elfeed-search-feed-face ((t (:foreground "brightcyan"))))
+ '(elfeed-search-title-face ((t (:foreground "color-237"))))
+ '(elfeed-search-unread-count-face ((t (:foreground "white"))))
+ '(elfeed-search-unread-title-face ((t (:foreground "brightwhite"))))
  '(file-name-shadow ((t (:inherit shadow))))
+ '(hl-line ((t (:background "color-233" :foreground "brightwhite"))))
  '(magit-diff-added ((t (:background "black" :foreground "color-46"))))
  '(magit-diff-added-highlight ((t (:background "black" :foreground "color-46"))))
  '(magit-diff-context ((t (:foreground "color-252"))))
@@ -42,8 +52,8 @@
  '(magit-diffstat-removed ((t (:foreground "red"))))
  '(magit-dimmed ((t (:foreground "color-252"))))
  '(magit-section-highlight ((t nil)))
- '(org-agenda-date ((t (:foreground "brightyellow"))) t)
- '(org-agenda-date-weekend ((t (:foreground "yellow"))) t)
+ '(org-agenda-date ((t (:foreground "brightyellow"))))
+ '(org-agenda-date-weekend ((t (:foreground "yellow"))))
  '(org-agenda-structure ((t (:foreground "brightwhite"))))
  '(org-block-background ((t (:slant normal))))
  '(org-level-1 ((t (:foreground "color-146"))))
