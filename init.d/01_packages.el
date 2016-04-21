@@ -31,6 +31,7 @@
         'evil-org
         'evil-numbers
         'elfeed
+        'elfeed-org
         'helm
         'helm-ag
         'git-gutter
