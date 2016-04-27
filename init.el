@@ -31,17 +31,30 @@
     (dolist (file (directory-files gpk-init-dir t "\\.el$"))
       (load file)))
 
-;; Set up 'custom' system
-(setq custom-file (expand-file-name "emacs-customizations.el" gpk-emacs-config-dir))
+(defun is-in-terminal()
+      (not (display-graphic-p)))
+
+(if (is-in-terminal)
+    ;; Set up 'custom' system for graphical interface
+    (setq custom-file (expand-file-name "emacs-customizations.el" gpk-emacs-config-dir))
+    ;; else
+    (setq custom-file (expand-file-name "emacs-customizations-graphical.el" gpk-emacs-config-dir)))
+
 (load custom-file)
 (load-theme 'wombat)
 
-;; Remove background from themes since I use a transparent background in iTerm
-;; http://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
-(defun on-after-init ()
-  (unless (display-graphic-p (selected-frame))
-    (set-face-background 'default "unspecified-bg" (selected-frame))))
-(add-hook 'window-setup-hook 'on-after-init)
+(defun remove-background()
+  (set-face-background 'default "unspecified-bg" (selected-frame)))
 
-;; Remove background when this file is loaded.
-(set-face-background 'default "unspecified-bg" (selected-frame))
+(defun on-after-init ()
+  (if (is-in-terminal)
+      (remove-background)))
+
+(if (is-in-terminal)
+  (remove-background)
+  ;; Remove background from themes since I use a transparent background in iTerm
+  ;; http://stackoverflow.com/questions/19054228/emacs-disable-theme-background-color-in-terminal
+  (add-hook 'window-setup-hook 'on-after-init))
+
+(set-language-environment "UTF-8")
+(set-default-coding-systems 'utf-8)

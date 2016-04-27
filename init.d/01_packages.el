@@ -1,6 +1,7 @@
 (require 'package)
 
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
@@ -25,32 +26,44 @@
 ;; Activate installed packages
 (package-initialize)
 
-(ensure-package-installed 'evil
-        'evil-magit
-        'evil-leader
-        'evil-org
-        'evil-numbers
-        'elfeed
-        'elfeed-org
-        'helm
-        'helm-ag
-        'git-gutter
-        'projectile
-        'org
-        'powerline-evil
+(ensure-package-installed
+        'ag
         'airline-themes
-        'flx-ido
-        'windresize
-        'evil-rails
-        'erc
-        'robe
-        'company
-        'popwin
-        'direx
-        'grizzl
-        'ws-butler
+        'calfw
         'color-theme-zenburn
         'color-theme-wombat
+        'company
+        'direx
+        'elfeed
+        'elfeed-org
+        'erc
+        'evil
+        'evil-leader
+        'evil-magit
+        'evil-mu4e
+        'evil-numbers
+        'evil-org
+        'evil-rails
+        'fill-column-indicator
+        'flx-ido
+        'git-gutter
+        'grizzl
+        'helm
+        'helm-ag
+        'oauth
+        'org
+        'org-plus-contrib
+        'ox-pandoc
+        'popwin
+        'powerline-evil
+        'projectile
+        'robe
+        'ruby-hash-syntax
+        'simpleclip
+        'ssh
+        'wc-mode
+        'websocket
         'web-mode
-        'twittering-mode
+        'windresize
+        'ws-butler
         )

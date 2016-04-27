@@ -16,6 +16,9 @@
  '(git-gutter:deleted-sign "- ")
  '(git-gutter:modified-sign "• ")
  '(global-company-mode t)
+ '(org-agenda-files
+   (quote
+    ("~/git/her/org/org-earth/committees/operations/operations.org" "~/git/her/org/org-earth/committees/business/business.org" "~/git/her/org/org-earth/committees/programming/programming.org" "~/git/her/org/org-earth/committees/programming/slump/slump.org" "~/git/her/org/org-earth/committees/outreach/outreach.org" "~/git/her/org/org-earth/her.org" "~/git/me/org/me/finances/bills.org" "/Users/boontdustie/git/me/org/me/amber/amber.org" "/Users/boontdustie/git/me/org/me/brand/brand.org" "/Users/boontdustie/git/me/org/me/health/foods.org" "/Users/boontdustie/git/me/org/me/health/health.org" "/Users/boontdustie/git/me/org/me/music/music.org" "/Users/boontdustie/git/me/org/me/uki/uki.org" "/Users/boontdustie/git/me/org/me/writing/data/13/F4936A-3346-4635-A2EC-5A86F001F1C0/ufr.org" "/Users/boontdustie/git/me/org/me/writing/ufr.org" "/Users/boontdustie/git/me/org/me/writing/writing.org" "/Users/boontdustie/git/me/org/me/cal.org" "/Users/boontdustie/git/me/org/me/studies.org" "/Users/boontdustie/git/me/org/tech/README.org" "/Users/boontdustie/git/me/org/tech/emacs.org" "/Users/boontdustie/git/me/org/tech/vim.org" "/Users/boontdustie/git/me/org/wrk/cordyceps.org" "/Users/boontdustie/git/me/org/wrk/mycelium.org" "/Users/boontdustie/git/me/org/wrk/wrk.org" "/Users/boontdustie/git/me/org/links.org" "/Users/boontdustie/git/me/org/main.org" "/Users/boontdustie/git/me/org/todo.org" "/Users/boontdustie/git/me/org/email.org")))
  '(shr-color-visible-distance-min 10)
  '(shr-color-visible-luminance-min 100)
  '(whitespace-style
@@ -27,6 +30,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(button ((t (:background "color-232" :foreground "black" :box (:line-width 2 :color "magenta" :style released-button) :underline t :weight bold))))
+ '(cfw:face-day-title ((t (:background "black"))))
+ '(cfw:face-disable ((t (:foreground "DarkGray"))))
+ '(cfw:face-select ((t (:background "black"))))
+ '(cfw:face-today ((t (:background "black"))))
  '(custom-face-tag ((t (:foreground "brightblue"))))
  '(custom-variable-tag ((t (:foreground "brightblue" :weight bold))))
  '(elfeed-log-warn-level-face ((t (:foreground "brightblue"))))
@@ -36,6 +43,9 @@
  '(elfeed-search-unread-count-face ((t (:foreground "white"))))
  '(elfeed-search-unread-title-face ((t (:foreground "brightwhite"))))
  '(file-name-shadow ((t (:inherit shadow))))
+ '(helm-ff-directory ((t (:background "LightGray" :foreground "brightgreen"))))
+ '(helm-ff-file ((t (:inherit nil :foreground "brightgreen"))))
+ '(helm-match ((t (:foreground "brightwhite"))))
  '(hl-line ((t (:background "color-233" :foreground "brightwhite"))))
  '(magit-diff-added ((t (:background "black" :foreground "color-46"))))
  '(magit-diff-added-highlight ((t (:background "black" :foreground "color-46"))))
@@ -56,12 +66,13 @@
  '(org-agenda-date-weekend ((t (:foreground "yellow"))))
  '(org-agenda-structure ((t (:foreground "brightwhite"))))
  '(org-block-background ((t (:slant normal))))
+ '(org-code ((t (:inherit shadow))))
  '(org-level-1 ((t (:foreground "color-146"))))
  '(org-scheduled ((t (:foreground "brightwhite"))))
  '(org-scheduled-previously ((t (:foreground "white"))))
  '(org-scheduled-today ((t (:foreground "brightwhite"))))
  '(org-table ((t (:foreground "brightblue"))))
- '(org-tag ((t (:foreground "color-108" :slant normal :weight ultra-bold))))
+ '(org-tag ((t (:foreground "color-157" :slant normal :weight light :height 70))))
  '(org-todo ((t (:foreground "color-161" :weight bold))))
  '(powerline-inactive1 ((t (:background "#d0d0d0" :foreground "black"))))
  '(powerline-inactive2 ((t (:background "#ffffff" :foreground "black"))))

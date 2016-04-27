@@ -6,6 +6,7 @@
  "b" 'switch-to-buffer
  "k" 'kill-buffer
  "l" 'load-file
- "c" 'string-rectangle)
+ "c" 'string-rectangle
+ "/" 'comment-or-uncomment-region)
 
 (evil-leader/set-leader ",")

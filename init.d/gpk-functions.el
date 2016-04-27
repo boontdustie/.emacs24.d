@@ -18,16 +18,16 @@
   "Renames both current buffer and file it's visiting to NEW-NAME."
   (interactive "sNew name: ")
   (let ((name (buffer-name))
-	(filename (buffer-file-name)))
+        (filename (buffer-file-name)))
     (if (not filename)
-	(message "Buffer '%s' is not visiting a file!" name)
+        (message "Buffer '%s' is not visiting a file!" name)
       (if (get-buffer new-name)
-	  (message "A buffer named '%s' already exists!" new-name)
-	(progn
-	  (rename-file name new-name 1)
-	  (rename-buffer new-name)
-	  (set-visited-file-name new-name)
-	            (set-buffer-modified-p nil))))))
+          (message "A buffer named '%s' already exists!" new-name)
+        (progn
+          (rename-file name new-name 1)
+          (rename-buffer new-name)
+          (set-visited-file-name new-name)
+                    (set-buffer-modified-p nil))))))
 
 (global-set-key (kbd "C-c R") 'rename-file-and-buffer)
 
@@ -38,11 +38,36 @@
   (unless (= 2 (count-windows))
     (error "There are not 2 windows."))
   (let* ((windows (window-list))
-	 (w1 (car windows))
-	 (w2 (nth 1 windows))
-	 (w1b (window-buffer w1))
-	 (w2b (window-buffer w2)))
+         (w1 (car windows))
+         (w2 (nth 1 windows))
+         (w1b (window-buffer w1))
+         (w2b (window-buffer w2)))
     (set-window-buffer w1 w2b)
          (set-window-buffer w2 w1b)))
 
 (global-set-key (kbd "C-c W") 'transpose-windows)
+
+(global-set-key (kbd "C-c B") 'global-company-mode)
+
+(defun gpk-copy-file-path (&optional *dir-path-only-p)
+  "Copy the current buffer's file path or dired path to `kill-ring'.
+Result is full path.
+If `universal-argument' is called first, copy only the dir path.
+URL `http://ergoemacs.org/emacs/emacs_copy_file_path.html'
+Version 2016-07-17"
+  (interactive "P")
+  (let ((-fpath
+         (if (equal major-mode 'dired-mode)
+             (expand-file-name default-directory)
+           (if (null (buffer-file-name))
+               (user-error "Current buffer is not associated with a file.")
+             (buffer-file-name)))))
+    (kill-new
+     (if (null *dir-path-only-p)
+         (progn
+           (message "File path copied: 「%s」" -fpath)
+           -fpath
+           )
+       (progn
+         (message "Directory path copied: 「%s」" (file-name-directory -fpath))
+         (file-name-directory -fpath))))))
