@@ -16,9 +16,6 @@
  '(git-gutter:deleted-sign "- ")
  '(git-gutter:modified-sign "• ")
  '(global-company-mode t)
- '(org-agenda-files
-   (quote
-    ("~/git/her/org/org-earth/committees/operations/operations.org" "~/git/her/org/org-earth/committees/business/business.org" "~/git/her/org/org-earth/committees/programming/programming.org" "~/git/her/org/org-earth/committees/programming/slump/slump.org" "~/git/her/org/org-earth/committees/outreach/outreach.org" "~/git/her/org/org-earth/her.org" "~/git/me/org/me/finances/bills.org" "/Users/boontdustie/git/me/org/me/amber/amber.org" "/Users/boontdustie/git/me/org/me/brand/brand.org" "/Users/boontdustie/git/me/org/me/health/foods.org" "/Users/boontdustie/git/me/org/me/health/health.org" "/Users/boontdustie/git/me/org/me/music/music.org" "/Users/boontdustie/git/me/org/me/uki/uki.org" "/Users/boontdustie/git/me/org/me/writing/data/13/F4936A-3346-4635-A2EC-5A86F001F1C0/ufr.org" "/Users/boontdustie/git/me/org/me/writing/ufr.org" "/Users/boontdustie/git/me/org/me/writing/writing.org" "/Users/boontdustie/git/me/org/me/cal.org" "/Users/boontdustie/git/me/org/me/studies.org" "/Users/boontdustie/git/me/org/tech/README.org" "/Users/boontdustie/git/me/org/tech/emacs.org" "/Users/boontdustie/git/me/org/tech/vim.org" "/Users/boontdustie/git/me/org/wrk/cordyceps.org" "/Users/boontdustie/git/me/org/wrk/mycelium.org" "/Users/boontdustie/git/me/org/wrk/wrk.org" "/Users/boontdustie/git/me/org/links.org" "/Users/boontdustie/git/me/org/main.org" "/Users/boontdustie/git/me/org/todo.org" "/Users/boontdustie/git/me/org/email.org")))
  '(shr-color-visible-distance-min 10)
  '(shr-color-visible-luminance-min 100)
  '(whitespace-style
