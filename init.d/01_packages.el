@@ -35,6 +35,7 @@
         'company
         'direx
         'elfeed
+        'elfeed-goodies
         'elfeed-org
         'erc
         'evil
@@ -53,6 +54,7 @@
         'oauth
         'org
         'org-plus-contrib
+        'org-ehtml
         'ox-pandoc
         'popwin
         'powerline-evil
@@ -65,5 +67,6 @@
         'websocket
         'web-mode
         'windresize
+        'web-server
         'ws-butler
         )

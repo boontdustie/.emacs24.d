@@ -57,15 +57,13 @@
 
 (setq org-agenda-files
    (quote
-    ("/Users/boontdustie/git/her/org/"
-     "/Users/boontdustie/git/her/org/org-earth/"
-     "/Users/boontdustie/git/her/org/org-earth/committees"
-     "/Users/boontdustie/git/her/org/org-earth/committees/outreach/"
-     "/Users/boontdustie/git/her/org/org-earth/committees/programming/"
-     "/Users/boontdustie/git/her/org/org-earth/committees/operations/"
-     "/Users/boontdustie/git/her/org/org-earth/committees/business/"
-     "/Users/boontdustie/git/me/"
-     "/Users/boontdustie/git/wrk/"
+     ("/Users/boontdustie/git/her/wiki_repo"
+      "/Users/boontdustie/git/her/wiki_repo/outreach"
+      "/Users/boontdustie/git/her/wiki_repo/operations"
+      "/Users/boontdustie/git/her/wiki_repo/business"
+      "/Users/boontdustie/git/her/wiki_repo/programming"
+      "/Users/boontdustie/git/me/"
+      "/Users/boontdustie/git/wrk/"
      )))
 
 (setq org-default-notes-file "~/git/me/org/todo.org")
@@ -91,8 +89,8 @@
 (load-org-agenda-files-recursively "~/git/me/org/")
 
 (setq org-refile-targets
-  '((nil :maxlevel . 9)
-     (org-agenda-files :maxlevel . 9)))
+  '((nil :maxlevel . 14)
+     (org-agenda-files :maxlevel . 14)))
 
 ;;;; ORG-MODE: Other customizations
 (setq org-agenda-text-search-extra-files '(agenda-archives))
@@ -124,7 +122,8 @@
 
 (setq org-agenda-skip-scheduled-if-done t)
 
-(setq org-agenda-tag-filter-preset '("-backlog"))
+(setq org-agenda-tag-filter-preset
+      (quote ("-backlog" " garrett")))
 
 (setq org-agenda-custom-commands
       '(("W" "Work Agenda"
@@ -134,15 +133,18 @@
          ((tags-todo "wrk:now")
            (delete-other-windows)))
         ("H" "Hollow Earth Agenda"
-         ((tags-todo "her")
+         ((tags-todo "her:garrett")
            (delete-other-windows)))
         ("h" "Hollow Earth Agenda"
-         ((tags-todo "her:now")
+         ((tags-todo "her:garrett:now")
            (delete-other-windows)))
-        ("M" "My todo"
+        ("A" "Priority A"
+         ((tags-todo "+PRIORITY=\"A\"")
+           (delete-other-windows)))
+        ("T" "My todo"
          ((tags-todo "me")
            (delete-other-windows)))
-        ("m" "My todo now"
+        ("t" "My todo now"
          ((tags-todo "me:now")
            (delete-other-windows)))
         ("n" "Now Agenda"
@@ -156,3 +158,120 @@
 (define-key global-map (kbd "C-c D") 'org-decrypt-entry)
 (define-key global-map (kbd "C-c C-a") 'org-attach)
 (define-key global-map (kbd "C-c C-O") 'org-attach-open-in-emacs)
+
+
+(setq gpk/org-adjust-tags-column t)
+
+(defun gpk/org-adjust-tags-column-reset-tags ()
+  "In org-mode buffers it will reset tag position according to
+`org-tags-column'."
+  (when (and
+         (not (string= (buffer-name) "*Remember*"))
+         (eql major-mode 'org-mode))
+    (let ((b-m-p (buffer-modified-p)))
+      (condition-case nil
+          (save-excursion
+            (goto-char (point-min))
+            (command-execute 'outline-next-visible-heading)
+            ;; disable (message) that org-set-tags generates
+            (flet ((message (&rest ignored) nil))
+              (org-set-tags 1 t))
+            (set-buffer-modified-p b-m-p))
+        (error nil)))))
+
+(defun gpk/org-adjust-tags-column-now ()
+  "Right-adjust `org-tags-column' value, then reset tag position."
+  (set (make-local-variable 'org-tags-column)
+       (- (- (window-width) (length org-ellipsis))))
+  (gpk/org-adjust-tags-column-reset-tags))
+
+(defun gpk/org-adjust-tags-column-maybe ()
+  "If `gpk/org-adjust-tags-column' is set to non-nil, adjust tags."
+  (when gpk/org-adjust-tags-column
+    (gpk/org-adjust-tags-column-now)))
+
+(defun gpk/org-adjust-tags-column-before-save ()
+  "Tags need to be left-adjusted when saving."
+  (when gpk/org-adjust-tags-column
+     (setq org-tags-column 1)
+     (gpk/org-adjust-tags-column-reset-tags)))
+
+(defun gpk/org-adjust-tags-column-after-save ()
+  "Revert left-adjusted tag position done by before-save hook."
+  (gpk/org-adjust-tags-column-maybe)
+  (set-buffer-modified-p nil))
+
+; automatically align tags on right-hand side
+(add-hook 'window-configuration-change-hook
+          'gpk/org-adjust-tags-column-maybe)
+(add-hook 'before-save-hook 'gpk/org-adjust-tags-column-before-save)
+(add-hook 'after-save-hook 'gpk/org-adjust-tags-column-after-save)
+(add-hook 'org-agenda-mode-hook '(lambda ()
+                                  (setq org-agenda-tags-column (- (window-width)))))
+
+; between invoking org-refile and displaying the prompt (which
+; triggers window-configuration-change-hook) tags might adjust,
+; which invalidates the org-refile cache
+(defadvice org-refile (around org-refile-disable-adjust-tags)
+  "Disable dynamically adjusting tags"
+  (let ((gpk/org-adjust-tags-column nil))
+    ad-do-it))
+(ad-activate 'org-refile)
+
+(setq gpk/org-adjust-tags-column t)
+
+(defun gpk/org-adjust-tags-column-reset-tags ()
+  "In org-mode buffers it will reset tag position according to
+`org-tags-column'."
+  (when (and
+         (not (string= (buffer-name) "*Remember*"))
+         (eql major-mode 'org-mode))
+    (let ((b-m-p (buffer-modified-p)))
+      (condition-case nil
+          (save-excursion
+            (goto-char (point-min))
+            (command-execute 'outline-next-visible-heading)
+            ;; disable (message) that org-set-tags generates
+            (flet ((message (&rest ignored) nil))
+              (org-set-tags 1 t))
+            (set-buffer-modified-p b-m-p))
+        (error nil)))))
+
+(defun gpk/org-adjust-tags-column-now ()
+  "Right-adjust `org-tags-column' value, then reset tag position."
+  (set (make-local-variable 'org-tags-column)
+       (- (- (window-width) (length org-ellipsis))))
+  (gpk/org-adjust-tags-column-reset-tags))
+
+(defun gpk/org-adjust-tags-column-maybe ()
+  "If `gpk/org-adjust-tags-column' is set to non-nil, adjust tags."
+  (when gpk/org-adjust-tags-column
+    (gpk/org-adjust-tags-column-now)))
+
+(defun gpk/org-adjust-tags-column-before-save ()
+  "Tags need to be left-adjusted when saving."
+  (when gpk/org-adjust-tags-column
+     (setq org-tags-column 1)
+     (gpk/org-adjust-tags-column-reset-tags)))
+
+(defun gpk/org-adjust-tags-column-after-save ()
+  "Revert left-adjusted tag position done by before-save hook."
+  (gpk/org-adjust-tags-column-maybe)
+  (set-buffer-modified-p nil))
+
+; automatically align tags on right-hand side
+(add-hook 'window-configuration-change-hook
+          'gpk/org-adjust-tags-column-maybe)
+(add-hook 'before-save-hook 'gpk/org-adjust-tags-column-before-save)
+(add-hook 'after-save-hook 'gpk/org-adjust-tags-column-after-save)
+(add-hook 'org-agenda-mode-hook '(lambda ()
+                                  (setq org-agenda-tags-column (- (window-width)))))
+
+; between invoking org-refile and displaying the prompt (which
+; triggers window-configuration-change-hook) tags might adjust,
+; which invalidates the org-refile cache
+(defadvice org-refile (around org-refile-disable-adjust-tags)
+  "Disable dynamically adjusting tags"
+  (let ((gpk/org-adjust-tags-column nil))
+    ad-do-it))
+(ad-activate 'org-refile)
