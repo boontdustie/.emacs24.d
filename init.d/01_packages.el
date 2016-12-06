@@ -33,6 +33,8 @@
         'color-theme-zenburn
         'color-theme-wombat
         'company
+        'counsel
+        'counsel-projectile
         'direx
         'elfeed
         'elfeed-goodies
@@ -49,8 +51,9 @@
         'flx-ido
         'git-gutter
         'grizzl
-        'helm
-        'helm-ag
+        ;;'helm
+        ;;'helm-ag
+        'ivy
         'oauth
         'org
         'org-plus-contrib

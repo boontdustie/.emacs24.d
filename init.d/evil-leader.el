@@ -7,6 +7,8 @@
  "k" 'kill-buffer
  "l" 'load-file
  "c" 'string-rectangle
- "/" 'comment-or-uncomment-region)
+ "/" 'comment-or-uncomment-region
+ "s" 'counsel-ag
+ "i" 'ivy-resume)
 
 (evil-leader/set-leader ",")
