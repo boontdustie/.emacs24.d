@@ -28,7 +28,7 @@
  '(org-tags-column 1)
  '(package-selected-packages
    (quote
-    (web-server org-ehtml ws-butler windresize websocket web-mode wc-mode twittering-mode tidy ssh smtpmail-multi simpleclip ruby-hash-syntax robe powerline-evil ox-pandoc org-sync org-plus-contrib org-gcal oauth helm-ag grizzl github-issues git-gutter flx-ido fill-column-indicator evil-rails evil-org evil-numbers evil-mu4e evil-magit elfeed-org elfeed-goodies direx company color-theme-zenburn color-theme-wombat calfw airline-themes ag)))
+    (elfeed-web counsel-projectile counsel swiper ivy web-server org-ehtml ws-butler windresize websocket web-mode wc-mode twittering-mode tidy ssh smtpmail-multi simpleclip ruby-hash-syntax robe powerline-evil ox-pandoc org-sync org-plus-contrib org-gcal oauth helm-ag grizzl github-issues git-gutter flx-ido fill-column-indicator evil-rails evil-org evil-numbers evil-mu4e evil-magit elfeed-org elfeed-goodies direx company color-theme-zenburn color-theme-wombat calfw airline-themes ag)))
  '(shr-color-visible-distance-min 10)
  '(shr-color-visible-luminance-min 100)
  '(whitespace-style
