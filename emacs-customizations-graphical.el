@@ -22,13 +22,12 @@
  '(git-gutter:deleted-sign "- ")
  '(git-gutter:modified-sign "• ")
  '(global-company-mode t)
- '(org-agenda-files
-   (quote
-    ("/Users/boontdustie/git/me/org/me/data/13/F4936A-3346-4635-A2EC-5A86F001F1C0/ufr.org" "/Users/boontdustie/git/me/org/me/amber.org" "/Users/boontdustie/git/me/org/me/bills.org" "/Users/boontdustie/git/me/org/me/brand.org" "/Users/boontdustie/git/me/org/me/cal.org" "/Users/boontdustie/git/me/org/me/dreams.org" "/Users/boontdustie/git/me/org/me/foods.org" "/Users/boontdustie/git/me/org/me/health.org" "/Users/boontdustie/git/me/org/me/music.org" "/Users/boontdustie/git/me/org/me/radio.org" "/Users/boontdustie/git/me/org/me/studies.org" "/Users/boontdustie/git/me/org/me/ufr.org" "/Users/boontdustie/git/me/org/me/uki.org" "/Users/boontdustie/git/me/org/me/writing.org" "/Users/boontdustie/git/me/org/tech/README.org" "/Users/boontdustie/git/me/org/tech/emacs.org" "/Users/boontdustie/git/me/org/tech/vim.org" "/Users/boontdustie/git/me/org/wrk/cordyceps.org" "/Users/boontdustie/git/me/org/wrk/mycelium.org" "/Users/boontdustie/git/me/org/wrk/notes.org" "/Users/boontdustie/git/me/org/wrk/wrk.org" "/Users/boontdustie/git/me/org/email.org" "/Users/boontdustie/git/me/org/links.org" "/Users/boontdustie/git/me/org/main.org" "/Users/boontdustie/git/me/org/todo.org" "/Users/boontdustie/git/her/org/lpfm-site.org" "/Users/boontdustie/git/her/org/org-earth/business.org" "/Users/boontdustie/git/her/org/org-earth/her.org" "/Users/boontdustie/git/her/org/org-earth/operations.org" "/Users/boontdustie/git/her/org/org-earth/outreach.org" "/Users/boontdustie/git/her/org/org-earth/programming.org" "/Users/boontdustie/git/her/org/org-earth/underwriting.org")))
  '(org-tags-column 1)
+ '(org-trello-current-prefix-keybinding "C-c x" nil (org-trello))
+ '(org-trello-files (quote ("~/git/her/org/her.org")) nil (org-trello))
  '(package-selected-packages
    (quote
-    (elfeed-web counsel-projectile counsel swiper ivy web-server org-ehtml ws-butler windresize websocket web-mode wc-mode twittering-mode tidy ssh smtpmail-multi simpleclip ruby-hash-syntax robe powerline-evil ox-pandoc org-sync org-plus-contrib org-gcal oauth helm-ag grizzl github-issues git-gutter flx-ido fill-column-indicator evil-rails evil-org evil-numbers evil-mu4e evil-magit elfeed-org elfeed-goodies direx company color-theme-zenburn color-theme-wombat calfw airline-themes ag)))
+    (evil-surround wgrep-ag wgrep eruby-mode org-trello elfeed-web counsel-projectile counsel swiper ivy web-server org-ehtml ws-butler windresize websocket web-mode wc-mode twittering-mode tidy ssh smtpmail-multi simpleclip ruby-hash-syntax robe powerline-evil ox-pandoc org-sync org-plus-contrib org-gcal oauth helm-ag grizzl github-issues git-gutter flx-ido fill-column-indicator evil-rails evil-org evil-numbers evil-mu4e evil-magit elfeed-org elfeed-goodies direx company color-theme-zenburn color-theme-wombat calfw airline-themes ag)))
  '(shr-color-visible-distance-min 10)
  '(shr-color-visible-luminance-min 100)
  '(whitespace-style
@@ -39,11 +38,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "gray14" :foreground "navajo white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Source Code Pro for Powerline"))))
+ '(default ((t (:inherit nil :stipple nil :background "gray14" :foreground "navajo white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 140 :width normal :foundry "nil" :family "Anonymous Pro For Powerline"))))
  '(elfeed-search-date-face ((t (:foreground "DarkOrchid4"))))
  '(elfeed-search-feed-face ((t (:foreground "MediumPurple2"))))
  '(elfeed-search-tag-face ((t (:foreground "DarkOrchid4"))))
  '(elfeed-search-title-face ((t (:foreground "light slate gray"))))
+ '(eruby-standard-face ((t (:background "headerTextColor"))))
  '(font-lock-builtin-face ((t (:foreground "maroon4"))))
  '(font-lock-constant-face ((t (:foreground "honeydew3"))))
  '(font-lock-function-name-face ((t (:foreground "burlywood3"))))

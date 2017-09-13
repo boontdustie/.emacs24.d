@@ -29,8 +29,6 @@
           (set-visited-file-name new-name)
                     (set-buffer-modified-p nil))))))
 
-(global-set-key (kbd "C-c R") 'rename-file-and-buffer)
-
 ;;https://www.emacswiki.org/emacs/TransposeWindows
 (defun transpose-windows ()
   "Transpose two windows.  If more or less than two windows are visible, error."
@@ -44,10 +42,6 @@
          (w2b (window-buffer w2)))
     (set-window-buffer w1 w2b)
          (set-window-buffer w2 w1b)))
-
-(global-set-key (kbd "C-c W") 'transpose-windows)
-
-(global-set-key (kbd "C-c B") 'global-company-mode)
 
 (defun gpk-copy-file-path (&optional *dir-path-only-p)
   "Copy the current buffer's file path or dired path to `kill-ring'.
@@ -91,3 +85,8 @@ Version 2016-07-17"
       (goto-char (point-min))
       (replace-string "&gt;" ">")
       (goto-char (point-min)))))
+
+;; Globals
+(global-set-key (kbd "C-c R") 'rename-file-and-buffer)
+(global-set-key (kbd "C-c W") 'transpose-windows)
+(global-set-key (kbd "C-c B") 'global-company-mode)

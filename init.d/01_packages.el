@@ -47,6 +47,7 @@
         'evil-numbers
         'evil-org
         'evil-rails
+        'evil-surround
         'fill-column-indicator
         'flx-ido
         'git-gutter
@@ -58,6 +59,7 @@
         'org
         'org-plus-contrib
         'org-ehtml
+        'org-trello
         'ox-pandoc
         'popwin
         'powerline-evil

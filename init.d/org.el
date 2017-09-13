@@ -13,18 +13,8 @@
 
 (setq org-capture-templates
       '(("t" "My TODO task format." entry
-         (file "todo.org")
-         "* TODO [#B] %? %^G
-      SCHEDULED: %t
-       ")
-        ("l" "Links" entry
-          (file "links.org")
-          "* LINK %a")
-        ("c" "calendar" entry
-         (file "~/git/me/org/me/cal.org" "Calendar")
-        "* TODO %?")
-       ("e" "email" entry (file+headline "~/git/me/org/email.org" "Email")
-        "* TODO [#B] %a
+         (file "me.org")
+        "* TODO [#B] %? %^G
        SCHEDULED: %t")))
 
 ;;;; ORG-MODE: Behavior and key-map for capturing tasks
@@ -33,40 +23,9 @@
   (interactive)
     (org-capture nil "t"))
 
-(defun gpk-org-link-capture ()
- "Capture a link with my default template."
-  (interactive)
-    (org-capture nil "l"))
-
-(defun gpk-org-email-capture ()
- "Capture an email with my default template."
-  (interactive)
-    (org-capture nil "e"))
-
-(defun gpk-org-cal-capture ()
- "Capture an cal deadline with my default template."
-  (interactive)
-    (org-capture nil "c"))
-
 (define-key global-map (kbd "C-c t") 'gpk-org-task-capture)
-(define-key global-map (kbd "C-c e") 'gpk-org-email-capture)
-(define-key global-map (kbd "C-c c") 'gpk-org-cal-capture)
 
-;;;; ORG-MODE: Setting up where agenda/todo files go
-;;(setq org-agenda-files '("~/git/me/org/"))
-
-(setq org-agenda-files
-   (quote
-     ("/Users/boontdustie/git/her/wiki_repo"
-      "/Users/boontdustie/git/her/wiki_repo/outreach"
-      "/Users/boontdustie/git/her/wiki_repo/operations"
-      "/Users/boontdustie/git/her/wiki_repo/business"
-      "/Users/boontdustie/git/her/wiki_repo/programming"
-      "/Users/boontdustie/git/me/"
-      "/Users/boontdustie/git/wrk/"
-     )))
-
-(setq org-default-notes-file "~/git/me/org/todo.org")
+(setq org-default-notes-file "~/git/me/org/me.org")
 (setq org-directory "~/git/me/org")
 
 ;; Collect all .org from my Org directory and subdirs
@@ -133,7 +92,7 @@
          ((tags-todo "wrk:now")
            (delete-other-windows)))
         ("H" "Hollow Earth Agenda"
-         ((tags-todo "her:garrett")
+         ((tags-todo "her")
            (delete-other-windows)))
         ("h" "Hollow Earth Agenda"
          ((tags-todo "her:garrett:now")

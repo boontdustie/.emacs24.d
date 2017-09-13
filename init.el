@@ -58,7 +58,7 @@
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
-(set-default-font "Source Code Pro For Powerline-14")
+(set-default-font "Source Code Pro for Powerline 14")
 
 (setq default-fill-column 80)
 (setq delete-old-versions -1 )		; delete excess backup versions silently
@@ -72,3 +72,5 @@
 (setq sentence-end-double-space nil)	; sentence SHOULD end with only a point.
 (setq default-fill-column 80)		; toggle wrapping text at the 80th character
 (setq initial-scratch-message "Welcome to Emacs")
+
+(setq js-indent-level 2)                ; javascript indent level
